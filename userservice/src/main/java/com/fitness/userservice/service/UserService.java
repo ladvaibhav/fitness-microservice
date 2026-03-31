@@ -7,11 +7,13 @@ import com.fitness.userservice.entity.User;
 import com.fitness.userservice.repository.UserRepository;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 @AllArgsConstructor
 public class UserService {
 
@@ -74,5 +76,10 @@ public class UserService {
                 })
                 .toList();
 
+    }
+
+    public Boolean existByUserId(String userId) {
+        log.info("Calling User Validation API for UserID: "+userId);
+        return repository.existsById(userId);
     }
 }

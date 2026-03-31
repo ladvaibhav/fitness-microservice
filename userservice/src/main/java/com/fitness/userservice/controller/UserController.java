@@ -19,6 +19,11 @@ public class UserController {
 
     private UserService userService;
 
+    @PostMapping
+    public ResponseEntity<UserCreateResponse> createUserProfile(@Valid @RequestBody UserRequest request){
+        return ResponseEntity.ok(userService.createUserProfile(request));
+    }
+
     @GetMapping("/all")
     public ResponseEntity<List<UserResponse>> getAllUser(){
         return ResponseEntity.ok(userService.getAllUser());
@@ -29,9 +34,9 @@ public class UserController {
         return ResponseEntity.ok(userService.getUserProfile(userId));
     }
 
-    @PostMapping
-    public ResponseEntity<UserCreateResponse> createUserProfile(@Valid @RequestBody UserRequest request){
-        return ResponseEntity.ok(userService.createUserProfile(request));
+    @GetMapping("/{userId}/validate")
+    public ResponseEntity<Boolean> validateUser(@PathVariable String userId){
+        return ResponseEntity.ok(userService.existByUserId(userId));
     }
 
 }
