@@ -2,14 +2,30 @@
 *.class
 *.log
 .DS_Store
-Thumbbs.db
+Thumbs.db
+
+# IDE files
 .idea/
 .vscode/
 *.iml
+
+# Build output
 target/
 bin/
 out/
 build/
+
+# Packaged files
 *.jar
 *.war
 *.ear
+
+# Environment & secrets
+.env
+.env.*
+
+# Spring config (ALL microservices)
+**/src/main/resources/application.properties
+**/src/main/resources/application.yml
+**/src/main/resources/application-*.properties
+**/src/main/resources/application-*.yml
