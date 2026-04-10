@@ -24,8 +24,8 @@ build/
 .env
 .env.*
 
-# Spring config (ALL microservices)
-**/src/main/resources/application.properties
-**/src/main/resources/application.yml
-**/src/main/resources/application-*.properties
-**/src/main/resources/application-*.yml
+## Spring config (ALL microservices)
+#**/src/main/resources/application.properties
+#**/src/main/resources/application.yml
+#**/src/main/resources/application-*.properties
+#**/src/main/resources/application-*.yml
